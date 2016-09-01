@@ -32,6 +32,9 @@ services:
     - "10022:22"
     volumes:
     - ./volumes/gitlab:/home/git/data:Z
+    networks:
+    - default
+    - mynetwork
     environment:
     - DEBUG=false
 
@@ -147,3 +150,7 @@ services:
     - OAUTH_AZURE_API_KEY=
     - OAUTH_AZURE_API_SECRET=
     - OAUTH_AZURE_TENANT_ID=
+
+networks:
+  mynetwork:
+    external: true
