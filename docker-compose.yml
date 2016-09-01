@@ -23,6 +23,7 @@ services:
   gitlab:
     restart: always
     image: sameersbn/gitlab:8.9.5
+    container_name: gitlab
     depends_on:
     - redis
     - postgresql
